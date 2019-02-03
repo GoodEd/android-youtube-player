@@ -52,6 +52,10 @@ class ChromecastYouTubePlayer internal constructor(private val chromecastCommuni
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    override fun setPlaybackQuality(playbackQuality: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun play() {
         val message = JSONUtils.buildFlatJson(
                 "command" to ChromecastCommunicationConstants.PLAY

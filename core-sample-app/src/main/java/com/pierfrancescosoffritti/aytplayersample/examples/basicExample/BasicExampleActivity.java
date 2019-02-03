@@ -78,6 +78,7 @@ public class BasicExampleActivity extends AppCompatActivity {
                 public void onReady() {
                     loadVideo(youTubePlayer, videoIds[0]);
                     youTubePlayer.setPlaybackRate(2);
+                    youTubePlayer.setPlaybackQuality("hd720");
                 }
             });
 

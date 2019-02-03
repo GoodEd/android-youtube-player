@@ -24,6 +24,8 @@ public interface YouTubePlayer {
 
     void setPlaybackRate(@NonNull final float playbackRate);
 
+    void setPlaybackQuality(@NonNull final String playbackQuality);
+
     /**
      * @param volumePercent Integer between 0 and 100
      */
