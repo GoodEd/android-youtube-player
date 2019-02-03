@@ -22,6 +22,8 @@ public interface YouTubePlayer {
     void play();
     void pause();
 
+    void setPlaybackRate(@NonNull final float playbackRate);
+
     /**
      * @param volumePercent Integer between 0 and 100
      */

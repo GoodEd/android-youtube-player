@@ -85,6 +85,16 @@ class WebViewYouTubePlayer extends WebView implements YouTubePlayer, YouTubePlay
     }
 
     @Override
+    public void setPlaybackRate(@NonNull final float playbackRate) {
+        mainThreadHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                loadUrl("javascript:setPlaybackRate("+playbackRate+")");
+            }
+        });
+    }
+
+    @Override
     public void play() {
         mainThreadHandler.post(new Runnable() {
             @Override
@@ -160,6 +170,8 @@ class WebViewYouTubePlayer extends WebView implements YouTubePlayer, YouTubePlay
         settings.setJavaScriptEnabled(true);
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         settings.setMediaPlaybackRequiresUserGesture(false);
+        String desktopAgent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0";
+        settings.setUserAgentString(desktopAgent);
 
         this.addJavascriptInterface(new YouTubePlayerBridge(this), "YouTubePlayerBridge");
 

@@ -48,6 +48,10 @@ class ChromecastYouTubePlayer internal constructor(private val chromecastCommuni
         chromecastCommunicationChannel.sendMessage(message)
     }
 
+    override fun setPlaybackRate(playbackRate: Float) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun play() {
         val message = JSONUtils.buildFlatJson(
                 "command" to ChromecastCommunicationConstants.PLAY

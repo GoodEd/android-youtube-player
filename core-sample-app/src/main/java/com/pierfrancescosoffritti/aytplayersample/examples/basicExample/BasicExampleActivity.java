@@ -77,6 +77,7 @@ public class BasicExampleActivity extends AppCompatActivity {
                 @Override
                 public void onReady() {
                     loadVideo(youTubePlayer, videoIds[0]);
+                    youTubePlayer.setPlaybackRate(2);
                 }
             });
 
